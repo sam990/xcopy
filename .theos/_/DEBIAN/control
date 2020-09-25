@@ -1,0 +1,11 @@
+Package: com.sam990.xcopy
+Name: xcopy
+Depends: 
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Sameer
+Author: Sameer
+Section: System
+Tag: role::hacker
+Version: 0.0.1-8+debug
+Installed-Size: 144
