@@ -2,6 +2,6 @@
 
 CLI tool for iOS to copy text to clipboard.
 
-#Usage
+# Usage
 xcopy <string to copy>
 
