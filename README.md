@@ -3,5 +3,9 @@
 CLI tool for iOS to copy text to clipboard.
 
 ### Usage
-xcopy \<string to copy\>
+xcopy \[OPTION\]... \[string\]...
 
+If string is not given, program reads from stdin, until EOF is reached.
+
+Options:
+   -h,--help      Print help
