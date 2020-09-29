@@ -7,7 +7,6 @@ xcopy \[OPTION\]... \[string\]...
 
 If string is not given, program reads from stdin, until EOF is reached.
 
-Options:
-   
-   -h,--help      Print help
-   -p,--paste     Write the contents of clipboard to stdout
+Options:\
+&nbsp; &nbsp; -h,--help&nbsp; &nbsp; &nbsp;Print help\
+&nbsp; &nbsp; -p,--paste&nbsp; &nbsp;Write the contents of clipboard to stdout
