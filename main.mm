@@ -10,20 +10,32 @@ void printHelp(int argc, char **argv) {
 			"Description: Copies given string to the clipboard\n"
 			"If string is not given, program reads from stdin, until EOF is reached.\n\n"
 			"Options: \n"
-			"  -h,--help      Print this help\n\n"
+			"  -h,--help      Print this help\n"
+			"  -p,--paste     Write the contents of clipboard to stdout\n\n"
 			, argv[0]
 	);
 }
 
+void clipboardPaste() {
+	UIPasteboard *board = [UIPasteboard generalPasteboard];
+	fprintf(stdout, "%s\n\n", [board.string UTF8String]);
+}
+
+
 int main(int argc, char **argv, char **envp) {
 	struct option long_options[] = {
+		{"paste", no_argument, NULL, 'p'},
 		{"help", no_argument, NULL, 'h'},
 		{0, 0, 0, 0}
 	};
 
 	int opt, opt_index = 0;
 
-	while ((opt = getopt_long(argc, argv, "h", long_options, &opt_index)) != -1) {
+	while ((opt = getopt_long(argc, argv, "hp", long_options, &opt_index)) != -1) {
+		if (opt == 'p') {
+			clipboardPaste();
+			return 0;
+		}
 		printHelp(argc, argv);
 		return 0;
 	}
